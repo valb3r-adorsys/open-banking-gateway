@@ -44,7 +44,8 @@ export class InitiateComponent implements OnInit {
       name: ['peter', Validators.required],
       creditorIban: ['AL90208110080000001039531801', [ValidatorService.validateIban, Validators.required]],
       amount: ['12.34', [Validators.pattern('^[1-9]\\d*(\\.\\d{1,2})?$'), Validators.required]],
-      purpose: ['test transfer']
+      purpose: ['test transfer'],
+      instantPayment: false
     });
 
     // this is added to register url where to forward
@@ -66,6 +67,7 @@ export class InitiateComponent implements OnInit {
     paymentRequest.creditorIban = this.paymentForm.getRawValue().creditorIban;
     paymentRequest.debitorIban = this.debitorIban;
     paymentRequest.purpose = this.paymentForm.getRawValue().purpose;
+    paymentRequest.instantPayment = this.paymentForm.getRawValue().instantPayment;
     this.fintechSinglePaymentInitiationService
       .initiateSinglePayment(this.bankId, this.accountId, '', '', okurl, notOkUrl, paymentRequest, this.paymentRequiresAuthentication, 'response')
       .pipe(map(response => response))

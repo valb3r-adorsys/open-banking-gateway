@@ -1012,7 +1012,8 @@ components:
           type: string
         purpose:
           type: string
-
+        instantPayment:
+          type: boolean
 
     # Login
     loginRequest:
