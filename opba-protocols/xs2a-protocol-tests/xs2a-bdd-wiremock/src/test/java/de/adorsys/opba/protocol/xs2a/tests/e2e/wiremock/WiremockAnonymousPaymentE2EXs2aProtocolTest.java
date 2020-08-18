@@ -73,7 +73,7 @@ public class WiremockAnonymousPaymentE2EXs2aProtocolTest extends SpringScenarioT
         then()
                 .open_banking_has_stored_payment()
                 .fintech_calls_payment_activation_for_current_authorization_id()
-                .fintech_calls_payment_status();
+                .fintech_calls_payment_info();
     }
 
     @ParameterizedTest
@@ -99,7 +99,7 @@ public class WiremockAnonymousPaymentE2EXs2aProtocolTest extends SpringScenarioT
         then()
                 .open_banking_has_stored_payment()
                 .fintech_calls_payment_activation_for_current_authorization_id()
-                .fintech_calls_payment_status();
+                .fintech_calls_payment_info();
     }
 
     /**
@@ -131,7 +131,7 @@ public class WiremockAnonymousPaymentE2EXs2aProtocolTest extends SpringScenarioT
         then()
                 .open_banking_has_stored_payment()
                 .fintech_calls_payment_activation_for_current_authorization_id()
-                .fintech_calls_payment_status();
+                .fintech_calls_payment_info();
     }
 
     @ParameterizedTest
@@ -163,7 +163,7 @@ public class WiremockAnonymousPaymentE2EXs2aProtocolTest extends SpringScenarioT
         then()
                 .open_banking_has_stored_payment()
                 .fintech_calls_payment_activation_for_current_authorization_id()
-                .fintech_calls_payment_status();
+                .fintech_calls_payment_info();
     }
 
     @ParameterizedTest
@@ -195,7 +195,7 @@ public class WiremockAnonymousPaymentE2EXs2aProtocolTest extends SpringScenarioT
         then()
                 .open_banking_has_stored_payment()
                 .fintech_calls_payment_activation_for_current_authorization_id()
-                .fintech_calls_payment_status();
+                .fintech_calls_payment_info();
     }
 
 
@@ -234,7 +234,7 @@ public class WiremockAnonymousPaymentE2EXs2aProtocolTest extends SpringScenarioT
         then()
                 .open_banking_has_stored_payment()
                 .fintech_calls_payment_activation_for_current_authorization_id()
-                .fintech_calls_payment_status();
+                .fintech_calls_payment_info();
     }
 
     @ParameterizedTest
@@ -262,7 +262,7 @@ public class WiremockAnonymousPaymentE2EXs2aProtocolTest extends SpringScenarioT
         then()
                 .open_banking_has_stored_payment()
                 .fintech_calls_payment_activation_for_current_authorization_id()
-                .fintech_calls_payment_status();
+                .fintech_calls_payment_info();
     }
 }
 

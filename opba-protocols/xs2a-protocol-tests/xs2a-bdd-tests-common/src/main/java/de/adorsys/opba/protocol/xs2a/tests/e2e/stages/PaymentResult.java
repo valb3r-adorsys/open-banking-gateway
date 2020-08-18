@@ -108,11 +108,11 @@ public class PaymentResult<SELF extends PaymentResult<SELF>> extends Stage<SELF>
         return self();
     }
 
-    public SELF fintech_calls_payment_status() {
-        return fintech_calls_payment_status(SANDBOX_BANK_ID, TransactionStatus.ACSP.name());
+    public SELF fintech_calls_payment_info() {
+        return fintech_calls_payment_info(SANDBOX_BANK_ID, TransactionStatus.ACSP.name());
     }
 
-    public SELF fintech_calls_payment_status(String bankId, String expectedStatus) {
+    public SELF fintech_calls_payment_info(String bankId, String expectedStatus, String serviceSessionId) {
         withPaymentInfoHeaders(UUID.randomUUID().toString(), bankId)
                 .header(SERVICE_SESSION_ID, serviceSessionId)
                 .when()
@@ -122,6 +122,10 @@ public class PaymentResult<SELF extends PaymentResult<SELF>> extends Stage<SELF>
                 .body("transactionStatus", equalTo(expectedStatus))
                 .extract();
         return self();
+    }
+
+    public SELF fintech_calls_payment_info(String bankId, String expectedStatus) {
+        return fintech_calls_payment_info(bankId, expectedStatus, serviceSessionId);
     }
 
     public SELF fintech_calls_payment_activation_for_current_authorization_id(String serviceSessionId) {
