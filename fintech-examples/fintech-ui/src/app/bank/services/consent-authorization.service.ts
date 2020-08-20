@@ -26,9 +26,9 @@ export class ConsentAuthorizationService {
       // this is added to handle url where to forward after redirection
       // to be removed when issue https://github.com/adorsys/open-banking-gateway/issues/848 is resolved
       // or Fintech UI refactored
-      if (this.storageService.isUserRedirected) {
+      if (this.storageService.getUserRedirected) {
         // we use the redirect url from the Fintech server when we are redirected back
-        this.storageService.isUserRedirected = false;
+        this.storageService.setUserRedirected(false);
         this.router.navigate([location]);
       } else {
         // otherwise we use url saved before redirection occurred
